@@ -10,5 +10,12 @@ from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 
 # %%
+#Reading data into DataFrame and displaying it
+nutrition = pd.read_csv('NutritionData.csv')
+nutrition
 
-data = pd.read_csv('cas')
+
+
+# %%
+sns.pairplot(data=nutrition)
+# %%
