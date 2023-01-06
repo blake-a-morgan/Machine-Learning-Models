@@ -11,4 +11,4 @@ from sklearn import metrics
 
 # %%
 
-data = pd.read_csv('')
+data = pd.read_csv('cas')
