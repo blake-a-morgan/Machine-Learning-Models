@@ -28,8 +28,28 @@ dfgend= df[(df['Stratification1']=='Male')|(df['Stratification1']=='Female')]
 dfedu = df[df['StratificationCategory1']=='Education']
 dfinc = df[df['StratificationCategory1']=='Income']
 
+dfgend.reset_index(drop=True)
+dfedu.reset_index(drop=True)
+dfinc.reset_index(drop=True)
 
 # %%
-##Some Visualizations of the data
-sns.pairplot(data=df)
+##Some Visualizations of the data so far
+plt.figure(figsize=(14,4))
+gendcount = sns.countplot(data=dfgend,x='Question',hue='Stratification1')
+gendcount.set_xticklabels(gendcount.get_xticklabels(), rotation=40, ha="right")
+plt.tight_layout()
+plt.title('Lifestyle 1 by Gender')
+plt.show()
 
+
+
+# %%
+plt.figure(figsize=(14,4))
+educount = sns.countplot(data=dfedu,x='Question',hue='Education')
+educount.set_xticklabels(educount.get_xticklabels(), rotation=40, ha="right")
+plt.tight_layout()
+plt.title('Lifestyle 1 by Education')
+plt.show()
+# %%
+dfedu.info()
+# %%
